@@ -51,6 +51,9 @@ step2Data <- esameData[,mean_sd_act_sub_cols]
 
 activityLabels <- read.table("./UCI HAR Dataset/activity_labels.txt")
 
+
+library(dplyr)
+
 #Decode the id_activity with the description label 
 
 step3Data<-mutate(step2Data,activity=activityLabels[activity,2])
@@ -86,4 +89,3 @@ names(step4data) <- gsub(",","-", names(step4data))
 step5data <- aggregate(. ~activity+subject , step4data, mean)
 
 write.table(step5data, 'tidydataaverage.txt', row.names = F)
-
