@@ -91,3 +91,5 @@ step5data <- aggregate(. ~activity+subject , step4data, mean)
 write.table(step5data, 'tidydataaverage.txt', row.names = F)
 
 
+#Hello from Fabio sorry for my English.
+
